@@ -55,5 +55,12 @@ export class TestsService {
       deletedTest
     }
   }
+  async addQuestion(testId: string, questionId: any): Promise<any> {
+    return await this.testsModel.findOneAndUpdate(
+      { _id: testId },
+      { $push: { questions: questionId } },
+      { new: true } 
+    );
+  }
 
 }
