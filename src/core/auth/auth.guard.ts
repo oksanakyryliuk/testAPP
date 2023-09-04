@@ -36,7 +36,7 @@ export class JwtAuthGuard implements CanActivate {
             const payload = await this.jwtService.verifyAsync(
                 token,
                 {
-                    secret: 'JWT_SECRET',
+                    secret: this.configService.get('JWT_SECRET'),
                 }
             );
             // 💡 We're assigning the payload to the request object here
@@ -53,5 +53,3 @@ export class JwtAuthGuard implements CanActivate {
         return type === 'Bearer' ? token : undefined;
     }
 }
-
-
