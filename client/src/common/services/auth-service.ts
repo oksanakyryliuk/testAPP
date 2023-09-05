@@ -1,4 +1,4 @@
-import { AuthResponse,  LoginDTO, User } from '../types';
+import { AuthResponse,  LoginDTO , RegisterDTO} from '../types';
 import { httpClient } from '../http-client';
 
 export function apiLogin(data: LoginDTO) {
@@ -8,17 +8,11 @@ export function apiLogin(data: LoginDTO) {
       data,
   }).then(({ data }) => data);
 }
-// export function apiRegister(data: RegisterDTO) {
-//   return httpClient<AuthResponse>({
-//       method: 'post',
-//       url: '/auth/register',
-//       data,
-//   }).then(({ data }) => data);
-// }
+export function apiRegister(data: RegisterDTO) {
+  return httpClient<AuthResponse>({
+      method: 'post',
+      url: '/auth/signup',
+      data,
+  }).then(({ data }) => data);
+}
 
-// export function getLoggedInUser() {
-//   return httpClient<LoggedInUser>({
-//       method: 'get',
-//       url: `/auth/user`,
-//   }).then(({ data }) => data);
-// }

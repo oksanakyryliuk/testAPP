@@ -12,7 +12,7 @@ const LoginPage = () => {
             <Stack flexDirection="column" alignContent="Center" justifyContent="center" sx={{height: '100%', marginTop: '50px' }}>
                 <Stack component="form" flexDirection="column" alignContent="Center" justifyContent="center" spacing={3}
                        onSubmit={handleSubmit(login)}>
-                    <TextField label="Login" variant="outlined" autoFocus {...register('login', {required: true})}/>
+                    <TextField label="Login" variant="outlined" autoFocus {...register('username', {required: true})}/>
                     <TextField label="Password" type="password"
                                variant="outlined" {...register('password', {required: true})}/>
                     <Button variant="contained" type="submit" disabled={!isValid}>Login</Button>

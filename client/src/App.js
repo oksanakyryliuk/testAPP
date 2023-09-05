@@ -9,7 +9,8 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import { muiDarkTheme } from './common/config/theme.ts';
 import {AppModules} from "./common/enums/AppModules";
 import LoginPage from './auth/login/Login';
-import HomePage from './home/Home.tsx'
+import HomePage from './home/Home.tsx';
+import RegisterPage from './auth/register/Register.tsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
       <>
@@ -18,7 +19,7 @@ const router = createBrowserRouter(
           </Route> */}
             <Route path={AppModules.Home} element={<HomePage/>} />
           <Route path={AppModules.Login} element={<LoginPage/>} />
-          {/* <Route path={AppModules.Register} element={<Register/>} /> */}
+          <Route path={AppModules.Register} element={<RegisterPage/>} />
       </>,
   ),
 );

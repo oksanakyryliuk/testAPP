@@ -13,11 +13,16 @@ const HomePage = () => {
         <Link component={RouterLink} to={AppModules.Home}>
           Dashboard
         </Link>
-      ) : (
-        <Link component={RouterLink} to={AppModules.Login}>
+      ) : 
+      (<>
+      <Link component={RouterLink} to={AppModules.Login}>
           Login
         </Link>
-      )}
+         <Link component={RouterLink} to={AppModules.Register}>
+          Register
+        </Link>
+      
+       </>)}
     </Box>
   );
 };
